@@ -1,7 +1,4 @@
-# example menubar app
+# Radios.YT menubar app
+*Work in progress*
 
-## instructions
-
-- run `npm install`
-- run `npm run build` to make Example.app
-- run `npm start` to run app from CLI without building Example.app
+[Visit Radios.YT](https://radios.yt)
