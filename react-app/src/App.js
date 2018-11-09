@@ -1,16 +1,17 @@
 import React from "react";
 //import "./App.css";
-import Search from "./components/Search";
 import Player from "./components/Player";
+import Search from "./components/Search";
+import SearchResults from "./components/SearchResults";
+import fakeVideos from "./fakeData";
 
 class App extends React.Component {
 	state = {
-		currentTab: "search",
 		playing: false,
 		searching: false,
 		results: {
 			searchInProgress: false,
-			videos: []
+			videos: fakeVideos
 		}
 	};
 
@@ -40,18 +41,15 @@ class App extends React.Component {
 	};
 
 	play = id => {
-		this.setState({ playing: this.state.results.videos[id] });
+		this.setState(() => ({ playing: this.state.results.videos[id] }));
 	};
 
 	render() {
 		return (
 			<React.Fragment>
 				<Player playing={this.state.playing} />
-				<Search
-					play={this.play}
-					search={this.search}
-					results={this.state.results}
-				/>
+				<Search search={this.search} results={this.state.results} />
+				<SearchResults play={this.play} results={this.state.results} />
 			</React.Fragment>
 		);
 	}

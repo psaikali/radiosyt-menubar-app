@@ -1,0 +1,9 @@
+#player {
+}
+
+.youtube-player {
+	position:absolute;
+	z-index:-1;
+	left:-9999px;
+	top:-9999px;
+}

@@ -1,5 +1,4 @@
 import React from "react";
-import SearchResults from "./SearchResults";
 
 class Search extends React.Component {
 	/**
@@ -20,6 +19,7 @@ class Search extends React.Component {
 			"ambient",
 			"hits"
 		];
+
 		let random_keyword =
 			keywords[Math.floor(Math.random() * keywords.length)];
 
@@ -35,19 +35,17 @@ class Search extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<form onSubmit={this.search}>
-					<label htmlFor="keyword">Listen to:</label>
+				<form className="form-inline" onSubmit={this.search}>
+					<label htmlFor="keyword">Listen to</label>
 					<input
+						className="form-control form-control-lg"
 						type="text"
 						id="keyword"
 						placeholder={this.randomKeyword()}
 						ref={this.keywordRef}
+						autoComplete="off"
 					/>
 				</form>
-				<SearchResults
-					play={this.props.play}
-					results={this.props.results}
-				/>
 			</React.Fragment>
 		);
 	}
